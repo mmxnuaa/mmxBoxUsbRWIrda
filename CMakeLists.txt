@@ -12,6 +12,7 @@ add_executable(usbRW
 
 include_directories(src
         d:/work/IRRemote/NDK_PROJ/uWebSockets/src
+        d:/Androidndk-arm-api23-standalone-toolchain/sysroot/usr/include
         )
 
 ADD_DEFINITIONS(-std=c++11)
@@ -21,5 +22,5 @@ add_executable(webSvr
         #        jni/mylib.c
         jni/webServer.cpp)
 
-TARGET_LINK_LIBRARIES(usbRW usbhost)
+TARGET_LINK_LIBRARIES(usbRW usbhost uWS ssl z crypto)
 TARGET_LINK_LIBRARIES(webSvr uWS ssl z crypto)
