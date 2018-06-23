@@ -10,4 +10,16 @@ add_executable(usbRW
 #        jni/mylib.c
         jni/usbRW.cpp)
 
+include_directories(src
+        d:/work/IRRemote/NDK_PROJ/uWebSockets/src
+        )
+
+ADD_DEFINITIONS(-std=c++11)
+
+add_executable(webSvr
+        #        jni/main.cpp
+        #        jni/mylib.c
+        jni/webServer.cpp)
+
 TARGET_LINK_LIBRARIES(usbRW usbhost)
+TARGET_LINK_LIBRARIES(webSvr uWS ssl z crypto)
