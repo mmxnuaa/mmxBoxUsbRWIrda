@@ -20,7 +20,7 @@ ADD_DEFINITIONS(-std=c++11)
 add_executable(webSvr
         #        jni/main.cpp
         #        jni/mylib.c
-        jni/webServer.cpp)
+        jni/webServer.cpp jni/IrdaMgr.cpp jni/IrdaMgr.h)
 
 TARGET_LINK_LIBRARIES(usbRW usbhost uWS ssl z crypto)
-TARGET_LINK_LIBRARIES(webSvr uWS ssl z crypto)
+TARGET_LINK_LIBRARIES(webSvr usbhost uWS ssl z crypto)
